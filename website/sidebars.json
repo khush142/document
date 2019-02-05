@@ -1,0 +1,11 @@
+{
+  "docs": {
+    "Document 1": ["doc1"],
+    "Document 2": ["doc2"],
+    "Document 3": ["doc3"],
+    "Document 4": ["doc4"]
+  },
+  "docs-other": {
+    "First Category": ["doc5"]
+  }
+}
