@@ -4,7 +4,7 @@ title: RETHINKDB UPLOAD AWS S3
 sidebar_label: RETHINKDB COMMAND
 ---
 
-**PYTHON COMMANDS**
+**PYTHON COMMANDSsssssss**
 
 install pip :
 
