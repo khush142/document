@@ -1,0 +1,126 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>GIT COMMAND · LINUX COMMAND</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Change port in linux command&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="GIT COMMAND · LINUX COMMAND"/><meta property="og:type" content="website"/><meta property="og:url" content="https://github.com/khush142/document.git/document/index.html"/><meta property="og:description" content="&lt;p&gt;Change port in linux command&lt;/p&gt;
+"/><meta property="og:image" content="https://github.com/khush142/document.git/document/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://github.com/khush142/document.git/document/img/docusaurus.png"/><link rel="shortcut icon" href="/document/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/document/css/main.css"/><script src="/document/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/document/"><img class="logo" src="/document/img/docusaurus.svg" alt="LINUX COMMAND"/><h2 class="headerTitleWithLogo">LINUX COMMAND</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/document/docs/doc1" target="_self">Linux Basic Command</a></li><li class="siteNavGroupActive siteNavItemActive"><a href="/document/docs/doc2" target="_self">MYSQL command</a></li><li class="siteNavGroupActive"><a href="/document/docs/doc3" target="_self">Linux Git Command</a></li><li class="siteNavGroupActive"><a href="/document/docs/doc4" target="_self">Linux Command</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Document 2</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Document 1</h3><ul class=""><li class="navListItem"><a class="navItem" href="/document/docs/doc1">RETHINKDB COMMAND</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Document 2</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/document/docs/doc2">GIT COMMAND</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Document 3</h3><ul class=""><li class="navListItem"><a class="navItem" href="/document/docs/doc3">BASIC COMMAND OF LINUX</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Document 4</h3><ul class=""><li class="navListItem"><a class="navItem" href="/document/docs/doc4">MYSQL COMMAND</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">GIT COMMAND</h1></header><article><div><span><p>Change port in linux command</p>
+<pre><code class="hljs">            https://www.liquidweb.com/kb/changing-the-ssh-port/
+</code></pre>
+<p>Configure the author name and email address to be used with your commits.</p>
+<pre><code class="hljs">            git config --global user.name &quot;Sam Smith&quot;
+            git config --global user.email sam@example.com
+</code></pre>
+<p>Create new repository</p>
+<pre><code class="hljs">            git init
+</code></pre>
+<p>For a remote server, use:</p>
+<pre><code class="hljs">            git clone username@host:/path/to/
+</code></pre>
+<p>Add one or more files to staging (index):</p>
+<pre><code class="hljs">            git add &lt;filename&gt;
+
+            git add *
+</code></pre>
+<p>Commit changes to head (but not yet to the remote repository)</p>
+<pre><code class="hljs">                    git commit -m &quot;Commit message&quot;
+</code></pre>
+<p>Send changes to the master branch of your remote repository</p>
+<pre><code class="hljs">            git push origin master
+</code></pre>
+<p>List the files you've changed and those you still need to add or commit:</p>
+<pre><code class="hljs">            git status
+</code></pre>
+<p>List all currently configured remote repositories:</p>
+<pre><code class="hljs">            git remote -v
+</code></pre>
+<p>Create a new branch and switch to it:</p>
+<pre><code class="hljs">            git checkout -b &lt;branchname&gt;
+</code></pre>
+<p>Switch from one branch to another:</p>
+<pre><code class="hljs">            git checkout &lt;branchname&gt;
+</code></pre>
+<p>List all the branches in your repo, and also tell you what branch you're currently in:</p>
+<pre><code class="hljs">            git branch
+</code></pre>
+<p>Delete the feature branch:</p>
+<pre><code class="hljs">            git branch -d &lt;branchname&gt;
+</code></pre>
+<p>Push the branch to your remote repository, so others can use it:</p>
+<pre><code class="hljs">            git push origin &lt;branchname&gt;
+</code></pre>
+<p>Fetch and merge changes on the remote server to your working directory:</p>
+<pre><code class="hljs">            git pull
+</code></pre>
+<p>To merge a different branch into your active branch:</p>
+<pre><code class="hljs">            git merge &lt;branchname&gt;
+</code></pre>
+<p>After you have manually resolved any conflicts, you mark the changed file:</p>
+<pre><code class="hljs">            git add &lt;filename&gt;
+</code></pre>
+<p>For ignoring file in repositories for secure credential like password and credit card details use .gitignore file :</p>
+<pre><code class="hljs">            touch .gitignore
+            add file which you want to ignore into .gitignore
+            add .gitignore in git repository
+            git checkout –filename 
+</code></pre>
+<p>It will undo all changes in commited file</p>
+<pre><code class="hljs">            git revert commitID 
+</code></pre>
+<p>all changes are back to filename</p>
+<pre><code class="hljs">            git reset hard-- commit id 
+</code></pre>
+<p>This is used to show the difference you made into file.</p>
+<pre><code class="hljs">            git difftool 
+</code></pre>
+<p>git HEAD Branch_name :</p>
+<pre><code class="hljs">            HEAD is pointing towards the file you want to point.
+            It works as a pointer.
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/document/docs/doc1"><span class="arrow-prev">← </span><span>RETHINKDB COMMAND</span></a><a class="docs-next button" href="/document/docs/doc3"><span>BASIC COMMAND OF LINUX</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/document/" class="nav-home"><img src="/document/img/docusaurus.svg" alt="LINUX COMMAND" width="66" height="58"/></a><div><h5>Docs</h5><a href="/document/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/document/docs/en/doc2.html">Guides (or other categories)</a><a href="/document/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/document/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/document/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/document/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div></body></html>
