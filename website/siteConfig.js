@@ -38,10 +38,10 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'doc1', label: 'Linux Basic Command'},
-    {doc: 'doc2', label: 'MYSQL command'},
-    {doc: 'doc3', label: 'Linux Git Command'},
-    {doc: 'doc4', label: 'Linux Command'},
+    {doc: 'doc1', label: 'Linux Rethinkdb Command'},
+    {doc: 'doc2', label: 'Linux Git Command'},
+    {doc: 'doc3', label: 'Linux Basic Command'},
+    {doc: 'doc4', label: 'Linux Mysql Command'},
   ],
 
   // If you have users set above, you add it here:

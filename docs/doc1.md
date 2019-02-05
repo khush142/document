@@ -1,6 +1,6 @@
 ---
 id: doc1
-title: RETHINKDB UPLOAD ON AWS S3
+title: RETHINKDB UPLOAD AWS S3
 sidebar_label: RETHINKDB COMMAND
 ---
 
