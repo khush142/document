@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>RETHINKDB UPLOAD AWS S3 · LINUX COMMAND</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;&lt;strong&gt;PYTHON COMMANDS&lt;/strong&gt;&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="RETHINKDB UPLOAD ON AWS S3 · LINUX COMMAND"/><meta property="og:type" content="website"/><meta property="og:url" content="https://github.com/khush142/document.git/document/index.html"/><meta property="og:description" content="&lt;p&gt;&lt;strong&gt;PYTHON COMMANDS&lt;/strong&gt;&lt;/p&gt;
+"/><meta property="og:image" content="https://github.com/khush142/document.git/document/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://github.com/khush142/document.git/document/img/docusaurus.png"/><link rel="shortcut icon" href="/document/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/document/css/main.css"/><script src="/document/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/document/"><img class="logo" src="/document/img/docusaurus.svg" alt="LINUX COMMAND"/><h2 class="headerTitleWithLogo">LINUX COMMAND</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive siteNavItemActive"><a href="/document/docs/doc1" target="_self">Linux Basic Command</a></li><li class="siteNavGroupActive"><a href="/document/docs/doc2" target="_self">MYSQL command</a></li><li class="siteNavGroupActive"><a href="/document/docs/doc3" target="_self">Linux Git Command</a></li><li class="siteNavGroupActive"><a href="/document/docs/doc4" target="_self">Linux Command</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Document 1</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Document 1</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/document/docs/doc1">RETHINKDB COMMAND</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Document 2</h3><ul class=""><li class="navListItem"><a class="navItem" href="/document/docs/doc2">GIT COMMAND</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Document 3</h3><ul class=""><li class="navListItem"><a class="navItem" href="/document/docs/doc3">BASIC COMMAND OF LINUX</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Document 4</h3><ul class=""><li class="navListItem"><a class="navItem" href="/document/docs/doc4">MYSQL COMMAND</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">RETHINKDB UPLOAD ON AWS S3</h1></header><article><div><span><p><strong>PYTHON COMMANDS</strong></p>
+<p>install pip :</p>
+<pre><code class="hljs">    sudo apt-get install python-pip
+</code></pre>
+<p>Install the latest Boto 3 release via pip :</p>
+<pre><code class="hljs">    pip install boto3
+</code></pre>
+<p>You may also install a specific version :</p>
+<pre><code class="hljs">    pip install boto3==1.0.0
+</code></pre>
+<p>Executing a shell command</p>
+<pre><code class="hljs">    os.system()
+</code></pre>
+<p>Get the users environment</p>
+<pre><code class="hljs">    os.environ()
+</code></pre>
+<p><strong>AWS COMMANDS</strong></p>
+<p>Before you can begin using Boto 3, you should set up authentication credentials. Credentials for your AWS account can be found in the IAM Console. You can create or use an existing user. Go to manage access keys and generate a new set of keys :</p>
+<pre><code class="hljs">    aws configure
+</code></pre>
+<p>Alternatively, you can create the credential file yourself. By default, its location is at ~/.aws/credentials :</p>
+<pre><code class="hljs">    aws_access_key_id = YOUR_ACCESS_KEY
+    aws_secret_access_key = YOUR_SECRET_KEY
+    region=us-east-1
+</code></pre>
+<p>To use Boto 3, you must first import it and tell it what service you are going to use :</p>
+<pre><code class="hljs">    import boto3
+</code></pre>
+<p>Let's use Amazon S3</p>
+<pre><code class="hljs">    s3 = boto3.resource('s3')
+</code></pre>
+<p>It's also easy to upload and download binary data. For example, the following uploads a new file to S3. It assumes that the bucket my-bucket already exists :</p>
+<p>Upload a new file</p>
+<pre><code class="hljs">    data = open('test.jpg', 'rb')
+    s3.Bucket('my-bucket').put_object(Key='test.jpg', Body=data)
+</code></pre>
+<p><strong>RETHINKDB COMMANDS</strong></p>
+<p>Install rethinkdb : (Type all this command one by one on terminal)</p>
+<pre><code class="hljs">    source /etc/lsb-release &amp;&amp; echo &quot;deb http://download.rethinkdb.com/apt $DISTRIB_CODENAME main&quot; | sudo tee /etc/apt/sources.list.d/rethinkdb.list
+    wget -qO- https://download.rethinkdb.com/apt/pubkey.gpg | sudo apt-key add -
+    sudo apt-get update
+    sudo apt-get install rethinkdb
+</code></pre>
+<p>Install the python driver with pip:</p>
+<pre><code class="hljs">    sudo pip install rethinkdb
+</code></pre>
+<p>connect with rethinkdb : (It will start rethinkdb on your local server)</p>
+<pre><code class="hljs">    rethinkdb --bind all
+</code></pre>
+<p>The RethinkDB command line utility allows you to easily take hot backups on a live cluster with the dump and restore subcommands.</p>
+<p>Connect to the cluster at host fortress with a client port at 39500, saving to the default archive name tar.gz file (here type ip address from whom you want to take backup on fortress and typr rethinkdb port instead of 39500) (DATABASE EXPORT FROM SERVER TO LOCAL)</p>
+<pre><code class="hljs">    rethinkdb dump -c fortress:39500 -f backup.tar.gz
+</code></pre>
+<p>Restore backup.tar.gz to the cluster running on fortress at port 39500 (DATABASE IMPORT FROM LOCAL TO SERVER)</p>
+<pre><code class="hljs">    rethinkdb restore backup.tar.gz -c fortress:39500
+</code></pre>
+<p>Restore to the default cluster, only importing the table users to the database league from the archive backup.tar.gz</p>
+<pre><code class="hljs">    rethinkdb restore backup.tar.gz -i league.users -c fortress:39500
+</code></pre>
+<p>Restore only specific database from backup.tar.gz</p>
+<pre><code class="hljs">    rethinkdb restore backup.tar.gz league -c fortress:39500
+</code></pre>
+<p>overwrite the existing tar file or make new one by this command :</p>
+<pre><code class="hljs">    rethinkdb dump -c fortress:39500 --overwrite -f backup.tar.gz
+</code></pre>
+<p>Send Email using python tutorial :</p>
+<pre><code class="hljs">    https://www.geeksforgeeks.org/send-mail-gmail-account-using-python/
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="/document/docs/doc2"><span>GIT COMMAND</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/document/" class="nav-home"><img src="/document/img/docusaurus.svg" alt="LINUX COMMAND" width="66" height="58"/></a><div><h5>Docs</h5><a href="/document/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/document/docs/en/doc2.html">Guides (or other categories)</a><a href="/document/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/document/en/users.html">User Showcase</a><a href="http://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/document/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/document/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div></body></html>
