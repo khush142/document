@@ -36,9 +36,9 @@
 
 #### Make ansible playbook to run yaml script by ansible :
 		
-example: nano nginx.yml
-ansible playbook starts from --- name define the tag you want to give when file line runs. 
-connection: local connect the localhost 
+		example: nano nginx.yml
+		ansible playbook starts from --- name define the tag you want to give when file line runs. 
+		connection: local connect the localhost 
 
 		---
  		- name: Install nginx
@@ -50,8 +50,7 @@ connection: local connect the localhost
     		yum:
       		name: nginx
       		state: present
-	
-  		- name: Start NGiNX
+		- name: Start NGiNX
     		service:
       		name: nginx
       		state: started
