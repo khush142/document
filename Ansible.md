@@ -1,14 +1,14 @@
-## Ansible is an open-source IT automation engine, which can remove drudgery from your work life, and will also dramatically improve the scalability, consistency, and reliability of your IT environment.
+### Ansible is an open-source IT automation engine, which can remove drudgery from your work life, and will also dramatically improve the scalability, consistency, and reliability of your IT environment.
 
-## You can use Ansible to automate three types of tasks:
+### You can use Ansible to automate three types of tasks:
 
 		1. Provisioning: Set up the various servers you need in your infrastructure.
 		2. Configuration management: Change the configuration of an application, OS, or device; start and stop services; install or update applications; implement a security policy; or perform a wide variety of other configuration tasks.
 		3. Application deployment: Make DevOps easier by automating the deployment of internally developed applications to your production systems.
 
-## The best part is that you don’t even need to know the commands used to accomplish a particular task. You just need to specify what state you want the system to be in and Ansible will take care of it. For example, to ensure that your web servers are running the latest version of Apache, you could use a playbook that contains the command to run apache.
+### The best part is that you don’t even need to know the commands used to accomplish a particular task. You just need to specify what state you want the system to be in and Ansible will take care of it. For example, to ensure that your web servers are running the latest version of Apache, you could use a playbook that contains the command to run apache.
 
-## Ansible Terms:
+### Ansible Terms:
 
 		1. Controller Machine: The machine where Ansible is installed, responsible for running the provisioning on the servers you are managing.
 		2. Inventory: An initialization file that contains information about the servers you are managing.
