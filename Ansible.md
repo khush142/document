@@ -39,21 +39,22 @@
 example: nano nginx.yml
 ansible playbook starts from --- name define the tag you want to give when file line runs. 
 connection: local connect the localhost 
- ---
- - name: Install nginx
-  hosts: all
-  become: true
-  connection: local
-  tasks:
-  - name: Install nginx
-    yum:
-      name: nginx
-      state: present
 
-  - name: Start NGiNX
-    service:
-      name: nginx
-      state: started
+		---
+ 		- name: Install nginx
+  		hosts: all
+  		become: true
+  		connection: local
+  		tasks:
+  		- name: Install nginx
+    		yum:
+      		name: nginx
+      		state: present
+	
+  		- name: Start NGiNX
+    		service:
+      		name: nginx
+      		state: started
 
 #### Run ansible playbook by this command to execute file written in yml :
 
