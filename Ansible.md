@@ -39,8 +39,7 @@
 example: nano nginx.yml
 ansible playbook starts from --- name define the tag you want to give when file line runs. 
 connection: local connect the localhost 
- 
----
+ ---
  - name: Install nginx
   hosts: all
   become: true
