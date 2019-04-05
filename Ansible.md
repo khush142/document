@@ -9,6 +9,8 @@ The server must be powered down before attaching or removing storage devices.
 		2. In the disk configuration window, select the Create a new disk option, give the new disk a name and size in gigabytes as required. Then click Add a storage device to confirm.
 		3. After the attaching process is complete, you can power the server up again.
 		4. Once your server is up and running, you can continue with the command given below to type your servers terminal window.
+
+command :
 		
 1. lsblk	
 2. sudo fdisk /dev/disk
@@ -29,6 +31,7 @@ You should now see both storage disks and their partitions with their correct si
 Set up the partition with a file system type appropriate for your server. Ubuntu and other Debian variants should use EXT4 while CentOS 7 hosts might be using XFS instead.
 
 ## for ubuntu
+
 8. sudo mkfs.ext4 /dev/partition  
 
 With the formatting complete, you will next need to create a mounting point for the device.
