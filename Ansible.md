@@ -14,6 +14,7 @@ The server must be powered down before attaching or removing storage devices.
 2. sudo fdisk /dev/disk
 
 First, start a new partition configuration with n. Use default values by just pressing enter on each of the options, or type in the required parameter if no default value is given.
+
 3. n
 4. a
 5. p
