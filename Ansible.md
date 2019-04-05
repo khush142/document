@@ -1,67 +1,54 @@
-# 							Ansible Document
+p# 							Upcloud Disk(Storage) Document
 
 
 
-#### Ansible is an open-source IT automation engine, which can remove drudgery from your work life, and will also dramatically improve the scalability, consistency, and reliability of your IT environment.
+#### Adding and removing storage devices
 
-#### You can use Ansible to automate three types of tasks:
-
-		1. Provisioning: Set up the various servers you need in your infrastructure.
-		2. Configuration management: Change the configuration of an application, OS, or device; start and stop services; install or update applications; implement a security policy; or perform a wide variety of other configuration tasks.
-		3. Application deployment: Make DevOps easier by automating the deployment of internally developed applications to your production systems.
-
-#### The best part is that you don’t even need to know the commands used to accomplish a particular task. You just need to specify what state you want the system to be in and Ansible will take care of it. For example, to ensure that your web servers are running the latest version of Apache, you could use a playbook that contains the command to run apache.
-
-#### Ansible Terms:
-
-		1. Controller Machine: The machine where Ansible is installed, responsible for running the provisioning on the servers you are managing.
-		2. Inventory: An initialization file that contains information about the servers you are managing.
-		3. Playbook: The entry point for Ansible provisioning, where the automation is defined through tasks using YAML format.
-		4. Task: A block that defines a single procedure to be executed, e.g. Install a package.
-		ex:
-		tasks:
-    		- command: echo {{ item }}
-      		  loop: [ 0, 2, 4, 6, 8, 10 ]
-      	          when: item > 5
-
-		5. Module: A module typically abstracts a system task, like dealing with packages or creating and changing files. Ansible has a multitude of built-in modules, but you can also create custom ones.
-		6. Role: A pre-defined way for organizing playbooks and other files in order to facilitate sharing and reusing portions of a provisioning.
-		7. Play: A provisioning executed from start to finish is called a play. In simple words, execution of a playbook is called a play.
-		8. Facts: Global variables containing information about the system, like network interfaces or operating system.
-		9. Handlers: Used to trigger service status changes, like restarting or stopping a service.
-
-#### Install ansible in ubuntu :
-
-		sudo apt-get install ansible
-
-#### Check ansble is properly installed or not:
-
-		ansible --version
-
-#### Make ansible playbook to run yaml script by ansible :
+		The server must be powered down before attaching or removing storage devices.
+		1. Start by logging into your UpCloud control panel. Shut down the server in questions and go to the Resize tab in your server settings. Create a new disk by clicking the Add new device button.
+		2. In the disk configuration window, select the Create a new disk option, give the new disk a name and size in gigabytes as required. Then click Add a storage device to confirm.
+		3. After the attaching process is complete, you can power the server up again.
+		4. Once your server is up and running, you can continue with the command given below to type your servers terminal window.
 		
-		example: nano nginx.yml
-		ansible playbook starts from --- name define the tag you want to give when file line runs. 
-		connection: local connect the localhost 
+		1. lsblk	
+		2. sudo fdisk /dev/disk
 
-		---
- 		- name: Install nginx
-  		hosts: all
-  		become: true
-  		connection: local
-  		tasks:
-  		- name: Install nginx
-    		yum:
-      		name: nginx
-      		state: present
-		- name: Start NGiNX
-    		service:
-      		name: nginx
-      		state: started
+		First, start a new partition configuration with n. Use default values by just pressing enter on each of the options, or type in the required parameter if no default value is given.
+		3. n
+		4. a
+		5. p
+		6. w
 
-#### Run ansible playbook by this command to execute file written in yml :
+		Once fdisk has finished writing the partition table to the disk it will exit and return you to the usual command prompt. Check that the new partition shows up using the lsblk command.
 
-		sudo ansible-playbook nginx.yml
+		7. lsblk
+
+		You should now see both storage disks and their partitions with their correct sizes. The disks will be named like vda or vdb and their partitions with the added partition identifier number e.g. vda1 and vdb1. Notice that some of the commands below require you to enter the disk name while others use the partitions.
+
+		Set up the partition with a file system type appropriate for your server. Ubuntu and other Debian variants should use EXT4 while CentOS 7 hosts might be using XFS instead.
+
+## for ubuntu
+		8. sudo mkfs.ext4 /dev/partition  
+## for centos
+		9. sudo mkfs.xfs /dev/partition
+
+		With the formatting complete, you will next need to create a mounting point for the device.
+		Mounting a disk is as simple as making a new directory where you wish to attach the disk to, for example, /disk1 at your root directory.
+
+		10. sudo mkdir /disk1
+		11. sudo mount /dev/partition /disk1
+		The added storage space will now be available as a directory on your system.
+
+		12. df -h
+
+
+
+
+
+
+
+
+
 
 
 
