@@ -42,6 +42,8 @@ Mounting a disk is as simple as making a new directory where you wish to attach 
 
 		df -h
 
+
+
 #### Detaching a disk
 
 -> There are two ways of removing storage disks.
@@ -55,11 +57,15 @@ Mounting a disk is as simple as making a new directory where you wish to attach 
 
 -> Once the removal operation is complete, you can start up your server again.
 
+
+
 ### Resizing storage
 
 -> When your server is powered down, open your server settings and go to the Resize tab. At the Disks resource list, adjust the storage device size by using the slider or by entering the desired value in the text field on the right.Afterwards, just click the Save changes button to confirm the change.
 
 -> Once the disk size has been successfully increased, the new capacity will show up at the disk information. The disk capacity indicates the storage space allocated to the device. Next, boot up your cloud server again and continue on to perform the required operations at the OS-level for Linux.
+
+
 
 ##### Increasing storage size on Linux :
 
@@ -91,6 +97,8 @@ Mounting a disk is as simple as making a new directory where you wish to attach 
 
 		df -h
 		
+
+
 #### Decreasing storage size on Linux :
 
 -> Go to the Resize section in your server settings and click the Add new disk button underneath the list of your existing storage drives.
